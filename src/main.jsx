@@ -25,20 +25,25 @@ const router = createBrowserRouter([
             },
             {
                 path: "orders",
-                element: (
-                    <PrivateRoute>
-                        <Orders></Orders>,
-                    </PrivateRoute>
-                ),
+                element: <Orders></Orders>,
+
                 loader: cartProductsLoader,
             },
             {
                 path: "inventory",
-                element: <Inventory></Inventory>,
+                element: (
+                    <PrivateRoute>
+                        <Inventory></Inventory>
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "checkout",
-                element: <Checkout></Checkout>,
+                element: (
+                    <PrivateRoute>
+                        <Checkout></Checkout>,
+                    </PrivateRoute>
+                ),
             },
             {
                 path: "login",
